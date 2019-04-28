@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master2.master.cs" Inherits="RMS.Master2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+<style>
+
+.tabstyle
+{
+height: 35px;
+border: 3px solid;
+color: lightyellow;
+background-color: orangered;
+border-color: green;
+font-size: 18px;
+float: left;
+//position: fixed;
+padding: 14px x 40px;
+font-family:'Comic Sans MS';
+width: 270px;
+}
+
+.topimage
+{
+height: 160px;
+top: 0px;
+right: 100px;
+width: 860px;
+}
+
+.logout
+{
+height: 25px;
+border: 1px solid;
+background-color: tomato;
+color: lightyellow;
+right: 10px;
+top: 10px;
+position: fixed;
+}
+
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #myNav {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding: 10px;
+        opacity:0;
+      }
+
+
+</style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="tooplate_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/coda-slider.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+</head>
+
+
+
+
+<body style="background:url(images/b4.jpg)">
+    <button runat="server" class="logout" style="font-size:20px; color:#ffffff; width: 15%; height:45px; font-family:'Adobe Hebrew'; font-weight:bold; border: 2px solid #ffffff; background-color: #42c1b6; text-align: center; display: inline-block" OnClick='signOut_redirect()'>Sign Out</button>
+
+     <form id="form1" runat="server">
+       <div>
+           <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+           </asp:ContentPlaceHolder>
+       </div>
+    </form>
+        
+    
+    <script>
+    
+    </script>
+    
+
+</body>
+
+    <script>
+        var image_index = 0;
+        var x=slideShow();
+
+        function slideShow() 
+             {
+                 var slides = document.getElementsByClassName("Slide_Images");
+                 var index;
+                  for (index = 0; index < slides.length; index++) 
+                           {
+                             slides[index].style.display = "none";  
+                           }
+                  image_index++;
+                  if (image_index > slides.length) 
+                          {
+                             image_index = 1;
+                          }    
+                  slides[image_index-1].style.display = "block";
+                  setTimeout(slideShow, 3000);
+             }
+
+        function signOut_redirect()
+            {
+                location.href = 'Login.aspx';
+            }
+
+</script>
+
+</html>

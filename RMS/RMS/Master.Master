@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.Master.cs" Inherits="RMS.Site1" %>
+
+<!DOCTYPE html>
+
+<html style="min-height:100%">
+<head runat="server">
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+        <title> </title>
+    
+    <link href="tooplate_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/coda-slider.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body id="main-content" style=" background:url(images/resume.jpg) left no-repeat, url(images/resume2.jpg) right no-repeat, #42c1b6;background-size: 28% 100%; min-height:100%; ">
+    
+    <form id="form1" runat="server">
+        
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
